@@ -1,4 +1,5 @@
 import Button from './Button'
+import PropTypes from 'prop-types'
 
 const Task = ({ id, icon, title, description }) => {
 	const deleteTask = () => {
@@ -20,6 +21,13 @@ const Task = ({ id, icon, title, description }) => {
 			</Button>
 		</button>
 	)
+}
+
+Task.propTypes = {
+	id: PropTypes.number,
+	icon: PropTypes.node,
+	title: PropTypes.string,
+	description: PropTypes.string,
 }
 
 export default Task
