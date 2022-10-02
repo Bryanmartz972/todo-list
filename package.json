@@ -6,6 +6,8 @@
 	"scripts": {
 		"dev": "vite",
 		"host": "vite --host",
+		"cypress:open": "cypress open",
+		"cypress:run": "cypress run",
 		"build": "vite build",
 		"preview": "vite preview",
 		"format": "prettier --write .",
@@ -23,6 +25,7 @@
 		"@types/react-dom": "^18.0.6",
 		"@vitejs/plugin-react": "^2.0.0",
 		"autoprefixer": "^10.4.8",
+		"cypress": "^10.9.0",
 		"eslint": "^8.20.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-config-standard": "^17.0.0",
