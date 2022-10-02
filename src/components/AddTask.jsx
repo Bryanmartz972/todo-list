@@ -45,6 +45,7 @@ const AddTask = () => {
 					className='w-full p-1 border-2 rounded-sm'
 					value={title}
 					onChange={handleChange}
+					data-cy='titletask-input'
 				/>
 			</label>
 			<label htmlFor='description'>
@@ -57,9 +58,14 @@ const AddTask = () => {
 					placeholder='Description of task'
 					className='w-full p-1 border-2 rounded-sm'
 					value={description}
-					onChange={handleChange}></textarea>
+					onChange={handleChange}
+					data-cy='descriptiontask-input'></textarea>
 			</label>
-			<Button onClick={() => handleSubmit} text='Add task' color='bg-accent'>
+			<Button
+				onClick={() => handleSubmit}
+				text='Add task'
+				color='bg-accent'
+				dataQA={'addtask-button'}>
 				<MdAddTask size='1.2rem' color='#fffffe' />
 			</Button>
 		</form>

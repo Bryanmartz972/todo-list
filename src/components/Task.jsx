@@ -16,7 +16,10 @@ const Task = ({ id, icon, title, description }) => {
 				<h2>{title}</h2>
 				<p>{description}</p>
 			</div>
-			<Button onClick={deleteTask} color='bg-secondary'>
+			<Button
+				onClick={deleteTask}
+				color='bg-secondary'
+				dataQA='deletetask-button'>
 				{icon}
 			</Button>
 		</button>
