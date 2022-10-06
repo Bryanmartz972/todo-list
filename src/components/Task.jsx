@@ -1,12 +1,15 @@
 import Button from './Button'
 import PropTypes from 'prop-types'
+import Todolist from '../pages/Todolist'
+import db from '../helpers/db'
+
+const { todos } = db
 
 const Task = ({ id, icon, title, description }) => {
-	const deleteTask = () => {
-		const tasks = JSON.parse(localStorage.getItem('tasks'))
-		tasks.splice(id, 1)
-		localStorage.setItem('tasks', JSON.stringify(tasks))
-		window.location.reload(false)
+	const deleteTask = async id => todos.delete(id)
+
+	const completeTask = async(id, event) => {
+		await todos.update(id, {completed: !event.target.checked})
 	}
 
 	return (
@@ -17,9 +20,9 @@ const Task = ({ id, icon, title, description }) => {
 				<p>{description}</p>
 			</div>
 			<Button
-				onClick={deleteTask}
 				color='bg-secondary'
-				dataQA='deletetask-button'>
+				dataQA='deletetask-button'
+				onClick={() => deleteTask(id)}>
 				{icon}
 			</Button>
 		</button>

@@ -1,10 +1,25 @@
 import Button from './Button'
 import { MdAddTask } from 'react-icons/md'
 import { useState } from 'react'
+import db from '../helpers/db'
+
+const { todos } = db
 
 const AddTask = () => {
 	const [title, setTitle] = useState('')
 	const [description, setDescription] = useState('')
+
+	const addTask = async e => {
+		e.preventDefault()
+		await todos.add({
+			title: title,
+			description: description,
+			completed: false,
+		})
+
+		setTitle('')
+		setDescription('')
+	}
 
 	const handleChange = e => {
 		const { name, value } = e.target
@@ -15,23 +30,10 @@ const AddTask = () => {
 		}
 	}
 
-	const handleSubmit = e => {
-		setTitle(prev => prev.trim())
-		setDescription(prev => prev.trim())
-		e.preventDefault()
-		const tasks = JSON.parse(localStorage.getItem('tasks'))
-		const newTask = { title, description, completed: false }
-		tasks.push(newTask)
-		localStorage.setItem('tasks', JSON.stringify(tasks))
-		setTitle('')
-		setDescription('')
-		window.location.reload(false)
-	}
-
 	return (
 		<form
 			className='shadow-md rounded-md flex flex-col p-4 gap-4'
-			onSubmit={handleSubmit}>
+			onSubmit={addTask}>
 			<label htmlFor='title'>
 				<h3>Title of task</h3>
 				<input
@@ -62,7 +64,7 @@ const AddTask = () => {
 					data-cy='descriptiontask-input'></textarea>
 			</label>
 			<Button
-				onClick={() => handleSubmit}
+				onClick={() => addTask}
 				text='Add task'
 				color='bg-accent'
 				dataQA={'addtask-button'}>
