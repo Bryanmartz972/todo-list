@@ -32,7 +32,7 @@ const AddTask = () => {
 
 	return (
 		<form
-			className='shadow-md rounded-md flex flex-col p-4 gap-4'
+			className='shadow-md rounded-md flex flex-col p-4 gap-4 bg-secondary'
 			onSubmit={addTask}>
 			<label htmlFor='title'>
 				<h3>Title of task</h3>
@@ -66,7 +66,7 @@ const AddTask = () => {
 			<Button
 				onClick={() => addTask}
 				text='Add task'
-				color='bg-accent'
+				color='bg-primary'
 				dataQA={'addtask-button'}>
 				<MdAddTask size='1.2rem' color='#fffffe' />
 			</Button>

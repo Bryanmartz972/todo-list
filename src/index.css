@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	@apply bg-background;
+}
+
 h1 {
-	@apply text-2xl font-black text-headline;
+	@apply text-2xl font-black text-paragraph;
 }
 
 h2 {
-	@apply text-lg font-bold text-headline;
+	@apply text-lg font-bold text-paragraph;
 }
 
 h3 {
-	@apply font-bold text-headline;
+	@apply font-bold text-paragraph;
 }
 
 p {

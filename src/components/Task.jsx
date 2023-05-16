@@ -1,6 +1,5 @@
 import Button from './Button'
 import PropTypes from 'prop-types'
-import Todolist from '../pages/Todolist'
 import db from '../helpers/db'
 
 const { todos } = db
@@ -8,7 +7,7 @@ const { todos } = db
 const Task = ({ id, icon, title, description }) => {
 	const deleteTask = async id => todos.delete(id)
 
-	const completeTask = async(id, event) => {
+	const completeTask = async (id, event) => {
 		await todos.update(id, {completed: !event.target.checked})
 	}
 
@@ -20,7 +19,7 @@ const Task = ({ id, icon, title, description }) => {
 				<p>{description}</p>
 			</div>
 			<Button
-				color='bg-secondary'
+				color='bg-accent'
 				dataQA='deletetask-button'
 				onClick={() => deleteTask(id)}>
 				{icon}
