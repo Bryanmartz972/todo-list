@@ -12,7 +12,7 @@ const Task = ({ id, icon, title, description }) => {
 	}
 
 	return (
-		<button className='flex flex-row items-center rounded-md shadow-md p-4'>
+		<li className='flex flex-row items-center rounded-md shadow-md p-4'>
 			<div className='rounded-full border w-3.5 h-3.5'></div>
 			<div className='grow w-[70%] text-start mx-3'>
 				<h2>{title}</h2>
@@ -24,7 +24,7 @@ const Task = ({ id, icon, title, description }) => {
 				onClick={() => deleteTask(id)}>
 				{icon}
 			</Button>
-		</button>
+		</li>
 	)
 }
 
