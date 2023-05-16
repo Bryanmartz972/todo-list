@@ -12,12 +12,14 @@
 		"preview": "vite preview",
 		"format": "prettier --write .",
 		"lint": "eslint --fix . --ext .js,.jsx",
+		"commit": "git-cz",
 		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
 		"dexie": "^3.2.2",
 		"dexie-react-hooks": "^1.1.1",
 		"gh-pages": "^4.0.0",
+		"git-cz": "^4.9.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-icons": "^4.4.0"
