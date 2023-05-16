@@ -13,13 +13,11 @@ const Todolist = () => {
 		<section className='flex flex-col gap-4 max-w-[400px] px-4 my-4 m-auto'>
 			<h1 data-cy='todolist-title'>My tasks</h1>
 			<AddTask />
-			<ul data-cy='tasks-container' className='flex flex-col bg-secondary'>
-				{allItems?.map(({ id, title, description }) => (
+			<ul data-cy='tasks-container' className='flex flex-col gap-4'>
+				{allItems?.map((task) => (
 					<Task
-						key={id}
-						id={id}
-						title={title}
-						description={description}
+						key={task.id}
+						task={task}
 						icon={<MdOutlineCancel color='#fffffe' size='1.4rem' />}
 					/>
 				))}
