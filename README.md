@@ -15,18 +15,15 @@ This is a project created in my spare time to improve my skills. This is a small
 
 ## Incoming Features
 
-- 🌚 Toggle dark mode
 - 📚 Subtasks for every task
-- ✔️ Set completed task
-- ⏲️ Pomodoro timer
 ## Tech Stack
 
 - ⚛️ ReactJS
 - 🖌️ TailwindCSS for styling
+- 💾 Dexie for saving the tasks on browser
 
 
 
 ## Deployment
 
 [Click here](https://bryanmartz972.github.io/todo-list/) to try out the app!
-
