@@ -26,4 +26,4 @@ This is a project created in my spare time to improve my skills. This is a small
 
 ## Deployment
 
-[Click here](https://bryanmartz972.github.io/todo-list/) to try out the app!
+[Click here](https://thebryanmartinez.github.io/todo-list/) to try out the app!
