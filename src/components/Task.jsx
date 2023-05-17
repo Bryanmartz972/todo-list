@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 const { todos } = db
 
-const Task = ({ task }) => {
+const Task = ({ task, icon }) => {
 	const [completed, setCompleted] = useState(task?.completed || false)
 
 	const deleteTask = async () => await todos.delete(task.id)
@@ -30,7 +30,7 @@ const Task = ({ task }) => {
 				color='bg-accent'
 				dataQA='deletetask-button'
 				onClick={() => deleteTask(task.id)}>
-				{/* {icon} */}
+				{icon}
 			</Button>
 		</li>
 	)
