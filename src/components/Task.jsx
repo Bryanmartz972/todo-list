@@ -23,8 +23,8 @@ const Task = ({ task, icon }) => {
 				onChange={e => completeTask(e.target.checked)}
 				className='rounded-full border w-3.5 h-3.5'></input>
 			<div className='grow w-[70%] text-start mx-3'>
-				<h2>{task.title}</h2>
-				<p>{task.description}</p>
+				<h2 className={`${completed && 'line-through'}`}>{task.title}</h2>
+				<p className={`${completed && 'line-through'}`}>{task.description}</p>
 			</div>
 			<Button
 				color='bg-accent'
